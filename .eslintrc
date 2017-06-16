@@ -1,0 +1,33 @@
+{
+    "rules": {
+        "indent": [1, 2, {
+            "SwitchCase": 1
+        }], // 缩进使用2个空格
+        "no-unused-expressions": [1, {
+            "allowShortCircuit": true,
+            "allowTernary": true
+        }],
+        "max-len": [0, 100], // 一行最多100个字符
+        "import/no-unresolved": 0, // 关闭导入文件必须是es6写法的限制
+        "global-require": 0, // 关闭不允许在局部代码块中使用require的限制
+        "new-cap": 0, // 关闭方法名首字母不能大写的限制
+        "comma-dangle": 0, // 关闭对象中最后一值必须有个逗号的限制
+        "no-case-declarations": 0, // 关闭case中不能申明变量的限制
+        "eqeqeq": 0, // 关闭强制使用===的限制
+        "no-confusing-arrow": 0, // 关闭箭头函数不能直接用三元表达式的限制
+        "arrow-body-style": 0,
+        "react/prop-types": 0,
+        "no-param-reassign": 0,
+        "react/jsx-indent": [1, 2], // 缩进使用2个空格
+        "react/jsx-indent-props": [1, 2],
+        "react/jsx-no-bind": 0, // 关闭jsx中不能使用bind的限制
+        "react/prefer-stateless-function": 0 // 关闭纯组件的限制
+    },
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true
+        }
+    }
+}

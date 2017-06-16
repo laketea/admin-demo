@@ -1,0 +1,132 @@
+@import "./variables";
+
+@aside-bg: #ececec;
+@sider-bg: #2f3e53;
+@menu-bg: #2f3e53;
+@menu-dark-bg: #253042;
+@menu-light-bg: #2bb1ee;
+@menu-link-color: #748398;
+@header-bg: #fff;
+@border-color: #e9e9e9;
+@content-bg: #fff;
+@logo-color: #2bb1ee;
+
+:global {
+  .ant-theme-blue {
+    &.ant-layout-aside {
+      background-color: @aside-bg;
+    }
+    .ant-layout-sider {
+      background: @sider-bg;
+      .ant-layout-logo {
+        color: @logo-color;
+      }
+    }
+    .ant-layout-main {
+      .ant-layout-header {
+        background-color: @header-bg;
+        border: 1px solid @border-color;
+      }
+      .ant-layout-content {
+        background-color: @content-bg;
+      }
+    }
+  }
+  .ant-menu-blue.ant-menu {
+    background-color: @menu-bg;
+    color: @menu-link-color;
+    border-right: 0;
+    .ant-menu-sub {
+      color: @menu-link-color;
+      background: @menu-bg;
+    }
+    .ant-menu-inline.ant-menu-sub {
+      background: @menu-dark-bg;
+    }
+    .ant-menu-item {
+      color: @menu-link-color;
+    }
+    .ant-menu-item>a {
+      color: @menu-link-color;
+    }
+    .ant-menu-item-selected {
+      border-right: 0;
+      color: @white;
+    }
+    .ant-menu-item-selected>a {
+      color: @white;
+      &:hover {
+        color: @white;
+      }
+    }
+    .ant-menu-horizontal {
+      border-bottom-color: @menu-bg;
+    }
+    .ant-menu-horizontal>.ant-menu-item {
+      border-bottom: 0;
+      border-color: @menu-bg;
+      top: 0;
+    }
+    .ant-menu-horizontal>.ant-menu-submenu {
+      border-bottom: 0;
+      border-color: @menu-bg;
+      top: 0;
+    }
+    .ant-menu-inline {
+      border-right: 0;
+      .ant-menu-item {
+        border-right: 0;
+        left: 0;
+        margin-left: 0;
+      }
+      .ant-menu-item-selected {
+        background-color: @menu-light-bg !important;
+      }
+    }
+    .ant-menu-vertical {
+      border-right: 0;
+      .ant-menu-item {
+        border-right: 0;
+        left: 0;
+        margin-left: 0;
+      }
+      .ant-menu-item-selected {
+        background-color: @menu-light-bg !important;
+      }
+    }
+    .ant-menu-item:hover,
+    .ant-menu-item-active,
+    .ant-menu-submenu-active,
+    .ant-menu-submenu-selected,
+    .ant-menu-submenu:hover,
+    .ant-menu-submenu-title:hover {
+      background-color: transparent;
+      color: @white;
+    }
+    .ant-menu-item:hover>a,
+    .ant-menu-item-active>a,
+    .ant-menu-submenu-active>a,
+    .ant-menu-submenu-selected>a,
+    .ant-menu-submenu:hover>a,
+    .ant-menu-submenu-title:hover>a {
+      color: @white;
+    }
+    .ant-menu-vertical>.ant-menu-item,
+    .ant-menu-inline>.ant-menu-item,
+    .ant-menu-item-group-list>.ant-menu-item,
+    .ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title,
+    .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title,
+    .ant-menu-item-group-list>.ant-menu-submenu>.ant-menu-submenu-title {
+      padding: 0px 16px 0 24px;
+    }
+  }
+  .fold .ant-menu-blue >.ant-menu-submenu-selected {
+    color: @white;
+    background-color: @menu-light-bg;
+  }
+  .ant-menu-blue.ant-menu:not(.ant-menu-horizontal) {
+    .ant-menu-item-selected {
+      background-color: @menu-light-bg;
+    }
+  }
+}
