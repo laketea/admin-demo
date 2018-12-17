@@ -46,12 +46,6 @@ const { domain, queryToken, dataTransform } = Http.middlewares;
 
 const middlewares = [
   domain(getServer()),
-  queryToken(() => {
-    return {
-      sid: cookie.get('sid'),
-      st: cookie.get('st')
-    };
-  }),
   dataTransform((data, options) => {
     if (options.dataType == 'form') {
       const formData = new FormData();
@@ -78,7 +72,7 @@ const http = Http.create()
 
 // server.js
 import http from 'utils/http';
-const {get, post} = http.create('ag');
+const {get, post} = http.create('abc');
 ```
 
 ### 中间件
@@ -115,8 +109,8 @@ const {get, post} = http.create('ag');
 服务域中间件, 自动将url加上host路径, 使用时需传入hosts
 
     const domainMiddles = middlewares.domain({
-        api: '//api.56qq.cn',
-        ag: '//ag.56qq.cn'
+        api: '//api.xx.cn',
+        ax: '//ax.xx.cn'
     });
 
 ### dataTransform
@@ -146,7 +140,7 @@ const {get, post} = http.create('ag');
 
     // 请求时配置dataType为form
     export function upload(data) {
-      return post('/server/op/roster/upload', data, {
+      return post('/server/upload', data, {
         dataType: 'form'
       });
     }
@@ -156,8 +150,8 @@ token中间件，参数附加在url中, 使用时，需传入token对象
 
     const queryTokenMiddle = middlewares.queryToken(() => {
        return {
-          sid: cookie.get('sid'),
-          st: cookie.get('st')
+          sid: 'xxx',
+          st: 'xxx'
         } 
     });
 
@@ -167,7 +161,7 @@ token中间件，参数存放在header中,使用方式与queryToken类似
 
     const headerTokenMiddle = middlewares.headeroken(() => {
        return {
-          authorization: cookie.get('sid'),
+          authorization: 'xxx',
         } 
     });
 
@@ -189,7 +183,7 @@ token中间件，参数存放在header中,使用方式与queryToken类似
 授权失败中间件， 授权失败后，默认会跳转到登陆页面， 支持配置授权失败的code以及登陆hash
 
     const authFailedMiddle = middlewares.authFailed({
-        codes: ['120001', '120002'],
+        codes: ['401', '404'],
         hash: '/login'
     });
 

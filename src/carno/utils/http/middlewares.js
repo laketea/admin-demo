@@ -83,7 +83,7 @@ const headerToken = (_tokens) => {
 // 授权失败中间件
 const authFailed = (_options) => {
   const defaultOptions = {
-    codes: ['120001', '120002', '120008'],
+    codes: ['404', '401'],
     hash: '/login'
   };
   return {
